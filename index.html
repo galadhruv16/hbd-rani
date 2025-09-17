@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Rani!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="floral-top">
+        <span class="flower">🌸</span>
+        <span class="flower">🌷</span>
+        <span class="flower">🌺</span>
+        <span class="sparkle">✨</span>
+        <span class="heart">💖</span>
+      </div>
+      <h1 class="birthday-title">🎉 Happy Birthday Rani! 💖</h1>
+      <p class="subtitle">
+        Wishing you a magical day filled with love, joy, and sparkle!
+      </p>
+      <div class="cake-container">
+        <svg id="cake-svg" width="300" height="250" viewBox="0 0 300 250">
+          <!-- Cake base -->
+          <ellipse cx="150" cy="200" rx="100" ry="30" fill="#f7c59f" />
+          <rect
+            x="50"
+            y="100"
+            width="200"
+            height="100"
+            rx="40"
+            fill="#f7c59f"
+          />
+          <!-- Cake icing -->
+          <ellipse cx="150" cy="120" rx="100" ry="30" fill="#fff0f6" />
+          <!-- Candles -->
+          <g id="candles">
+            <rect x="90" y="80" width="10" height="30" fill="#ffb6c1" />
+            <rect x="140" y="80" width="10" height="30" fill="#b6e1ff" />
+            <rect x="190" y="80" width="10" height="30" fill="#ffe4b5" />
+            <!-- Flames -->
+            <circle class="flame" cx="95" cy="75" r="6" fill="#ffd700" />
+            <circle class="flame" cx="145" cy="75" r="6" fill="#ffd700" />
+            <circle class="flame" cx="195" cy="75" r="6" fill="#ffd700" />
+          </g>
+          <!-- Cake decorations -->
+          <circle cx="110" cy="170" r="8" fill="#ffb6c1" />
+          <circle cx="190" cy="170" r="8" fill="#b6e1ff" />
+          <circle cx="150" cy="180" r="8" fill="#ffe4b5" />
+        </svg>
+      </div>
+      <button id="blow-btn">💨 Blow Your Cake!</button>
+      <div class="decorations">
+        <span>🎈</span><span>🎂</span><span>💖</span><span>🎁</span
+        ><span>🌟</span><span>✨</span><span>🦋</span><span>🌸</span>
+      </div>
+      <div class="floral-bottom">
+        <span class="flower">🌸</span>
+        <span class="flower">🌷</span>
+        <span class="flower">🌺</span>
+        <span class="sparkle">✨</span>
+        <span class="heart">💖</span>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
