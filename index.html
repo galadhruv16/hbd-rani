@@ -17,13 +17,13 @@
 
       body {
         background: linear-gradient(
-            135deg,
-            rgba(102, 126, 234, 0.9) 0%,
-            rgba(118, 75, 162, 0.9) 25%,
-            rgba(240, 147, 251, 0.9) 50%,
-            rgba(245, 87, 108, 0.9) 75%,
-            rgba(79, 172, 254, 0.9) 100%
-          );
+          135deg,
+          rgba(102, 126, 234, 0.9) 0%,
+          rgba(118, 75, 162, 0.9) 25%,
+          rgba(240, 147, 251, 0.9) 50%,
+          rgba(245, 87, 108, 0.9) 75%,
+          rgba(79, 172, 254, 0.9) 100%
+        );
         background-size: 400% 400%;
         font-family: "Inter", sans-serif;
         min-height: 100vh;
@@ -36,10 +36,19 @@
       }
 
       @keyframes gradientFlow {
-        0%, 100% { background-position: 0% 50%; }
-        25% { background-position: 100% 0%; }
-        50% { background-position: 100% 100%; }
-        75% { background-position: 0% 100%; }
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 100% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        75% {
+          background-position: 0% 100%;
+        }
       }
 
       /* Endless scrolling photo collage background */
@@ -81,13 +90,21 @@
       }
 
       @keyframes scrollLeft {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
       }
 
       @keyframes scrollRight {
-        0% { transform: translateX(-50%); }
-        100% { transform: translateX(0); }
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
       }
 
       .collage-photo {
@@ -175,31 +192,43 @@
       }
 
       @keyframes float {
-        0% { transform: translateY(0) rotate(0deg); }
-        33% { transform: translateY(-20px) rotate(120deg); }
-        66% { transform: translateY(10px) rotate(240deg); }
-        100% { transform: translateY(0) rotate(360deg); }
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        33% {
+          transform: translateY(-20px) rotate(120deg);
+        }
+        66% {
+          transform: translateY(10px) rotate(240deg);
+        }
+        100% {
+          transform: translateY(0) rotate(360deg);
+        }
       }
 
       .container {
         max-width: 520px;
         margin: 40px auto;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.45);
         border-radius: 32px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 
-                    0 0 0 1px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(231, 84, 128, 0.12), 0 0 0 8px #ffe6f7;
         padding: 36px 28px 28px 28px;
         text-align: center;
         position: relative;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        z-index: 10;
+        border: 2px solid #ffd1dc;
+        z-index: 2;
         animation: containerFloat 6s ease-in-out infinite;
         backdrop-filter: blur(10px);
       }
 
       @keyframes containerFloat {
-        0%, 100% { transform: translateY(0px) scale(1); }
-        50% { transform: translateY(-8px) scale(1.02); }
+        0%,
+        100% {
+          transform: translateY(0px) scale(1);
+        }
+        50% {
+          transform: translateY(-8px) scale(1.02);
+        }
       }
 
       .title {
@@ -218,8 +247,13 @@
       }
 
       @keyframes textShimmer {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
       }
 
       .subtitle {
@@ -256,8 +290,13 @@
       }
 
       @keyframes cakeFloat {
-        0%, 100% { transform: translateY(0px) rotate(-1deg); }
-        50% { transform: translateY(-12px) rotate(1deg); }
+        0%,
+        100% {
+          transform: translateY(0px) rotate(-1deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(1deg);
+        }
       }
 
       .flame {
@@ -339,8 +378,13 @@
       }
 
       @keyframes decorFloat {
-        0%, 100% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(-8px) scale(1.05); }
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-8px) scale(1.05);
+        }
       }
 
       .decorations span {
@@ -358,8 +402,14 @@
       }
 
       @keyframes bounceDelay {
-        0%, 80%, 100% { transform: scale(1); }
-        40% { transform: scale(1.2); }
+        0%,
+        80%,
+        100% {
+          transform: scale(1);
+        }
+        40% {
+          transform: scale(1.2);
+        }
       }
 
       .confetti {
@@ -436,6 +486,44 @@
           height: 20vh;
         }
       }
+
+      @media (max-width: 700px) {
+        .container {
+          max-width: 98vw;
+          padding: 18px 6vw 18px 6vw;
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.28);
+        }
+        .title {
+          font-size: 2.1rem;
+          margin-bottom: 12px;
+        }
+        .subtitle {
+          font-size: 0.95rem;
+          margin-bottom: 18px;
+        }
+        .cake-container {
+          margin: 18px 0;
+        }
+        #cake-svg {
+          max-width: 220px;
+        }
+        .photo-collage-row {
+          width: calc(6 * 80vw * 2);
+          height: 28vw;
+        }
+        .photo-collage-row img {
+          width: 80vw;
+          height: 28vw;
+          border-radius: 12px;
+          margin: 0 2vw;
+        }
+      }
+      @media (min-width: 701px) {
+        .container {
+          background: rgba(255, 255, 255, 0.45);
+        }
+      }
     </style>
   </head>
 
@@ -444,70 +532,230 @@
     <div class="endless-collage">
       <!-- Row 1: Left to Right -->
       <div class="collage-row">
-        <img src="hbdimages/aryaranisleeping.jpg" class="collage-photo" alt="Arya Rani sleeping" />
-        <img src="hbdimages/aryaranistanding.jpg" class="collage-photo" alt="Arya Rani standing" />
+        <img
+          src="hbdimages/aryaranisleeping.jpg"
+          class="collage-photo"
+          alt="Arya Rani sleeping"
+        />
+        <img
+          src="hbdimages/aryaranistanding.jpg"
+          class="collage-photo"
+          alt="Arya Rani standing"
+        />
         <img src="hbdimages/crown.jpg" class="collage-photo" alt="Crown" />
-        <img src="hbdimages/fishdrawing.jpg" class="collage-photo" alt="Fish drawing" />
-        <img src="hbdimages/ranialbumcover.jpg" class="collage-photo" alt="Rani album cover" />
-        <img src="hbdimages/raniparking.jpg" class="collage-photo" alt="Rani parking" />
+        <img
+          src="hbdimages/fishdrawing.jpg"
+          class="collage-photo"
+          alt="Fish drawing"
+        />
+        <img
+          src="hbdimages/ranialbumcover.jpg"
+          class="collage-photo"
+          alt="Rani album cover"
+        />
+        <img
+          src="hbdimages/raniparking.jpg"
+          class="collage-photo"
+          alt="Rani parking"
+        />
         <!-- Duplicate for seamless loop -->
-        <img src="hbdimages/aryaranisleeping.jpg" class="collage-photo" alt="Arya Rani sleeping" />
-        <img src="hbdimages/aryaranistanding.jpg" class="collage-photo" alt="Arya Rani standing" />
+        <img
+          src="hbdimages/aryaranisleeping.jpg"
+          class="collage-photo"
+          alt="Arya Rani sleeping"
+        />
+        <img
+          src="hbdimages/aryaranistanding.jpg"
+          class="collage-photo"
+          alt="Arya Rani standing"
+        />
         <img src="hbdimages/crown.jpg" class="collage-photo" alt="Crown" />
-        <img src="hbdimages/fishdrawing.jpg" class="collage-photo" alt="Fish drawing" />
-        <img src="hbdimages/ranialbumcover.jpg" class="collage-photo" alt="Rani album cover" />
-        <img src="hbdimages/raniparking.jpg" class="collage-photo" alt="Rani parking" />
+        <img
+          src="hbdimages/fishdrawing.jpg"
+          class="collage-photo"
+          alt="Fish drawing"
+        />
+        <img
+          src="hbdimages/ranialbumcover.jpg"
+          class="collage-photo"
+          alt="Rani album cover"
+        />
+        <img
+          src="hbdimages/raniparking.jpg"
+          class="collage-photo"
+          alt="Rani parking"
+        />
       </div>
 
       <!-- Row 2: Right to Left -->
       <div class="collage-row">
         <img src="hbdimages/crown.jpg" class="collage-photo" alt="Crown" />
-        <img src="hbdimages/fishdrawing.jpg" class="collage-photo" alt="Fish drawing" />
-        <img src="hbdimages/ranialbumcover.jpg" class="collage-photo" alt="Rani album cover" />
-        <img src="hbdimages/raniparking.jpg" class="collage-photo" alt="Rani parking" />
-        <img src="hbdimages/aryaranisleeping.jpg" class="collage-photo" alt="Arya Rani sleeping" />
-        <img src="hbdimages/aryaranistanding.jpg" class="collage-photo" alt="Arya Rani standing" />
+        <img
+          src="hbdimages/fishdrawing.jpg"
+          class="collage-photo"
+          alt="Fish drawing"
+        />
+        <img
+          src="hbdimages/ranialbumcover.jpg"
+          class="collage-photo"
+          alt="Rani album cover"
+        />
+        <img
+          src="hbdimages/raniparking.jpg"
+          class="collage-photo"
+          alt="Rani parking"
+        />
+        <img
+          src="hbdimages/aryaranisleeping.jpg"
+          class="collage-photo"
+          alt="Arya Rani sleeping"
+        />
+        <img
+          src="hbdimages/aryaranistanding.jpg"
+          class="collage-photo"
+          alt="Arya Rani standing"
+        />
         <!-- Duplicate for seamless loop -->
         <img src="hbdimages/crown.jpg" class="collage-photo" alt="Crown" />
-        <img src="hbdimages/fishdrawing.jpg" class="collage-photo" alt="Fish drawing" />
-        <img src="hbdimages/ranialbumcover.jpg" class="collage-photo" alt="Rani album cover" />
-        <img src="hbdimages/raniparking.jpg" class="collage-photo" alt="Rani parking" />
-        <img src="hbdimages/aryaranisleeping.jpg" class="collage-photo" alt="Arya Rani sleeping" />
-        <img src="hbdimages/aryaranistanding.jpg" class="collage-photo" alt="Arya Rani standing" />
+        <img
+          src="hbdimages/fishdrawing.jpg"
+          class="collage-photo"
+          alt="Fish drawing"
+        />
+        <img
+          src="hbdimages/ranialbumcover.jpg"
+          class="collage-photo"
+          alt="Rani album cover"
+        />
+        <img
+          src="hbdimages/raniparking.jpg"
+          class="collage-photo"
+          alt="Rani parking"
+        />
+        <img
+          src="hbdimages/aryaranisleeping.jpg"
+          class="collage-photo"
+          alt="Arya Rani sleeping"
+        />
+        <img
+          src="hbdimages/aryaranistanding.jpg"
+          class="collage-photo"
+          alt="Arya Rani standing"
+        />
       </div>
 
       <!-- Row 3: Left to Right -->
       <div class="collage-row">
-        <img src="hbdimages/ranialbumcover.jpg" class="collage-photo" alt="Rani album cover" />
-        <img src="hbdimages/raniparking.jpg" class="collage-photo" alt="Rani parking" />
-        <img src="hbdimages/aryaranisleeping.jpg" class="collage-photo" alt="Arya Rani sleeping" />
-        <img src="hbdimages/aryaranistanding.jpg" class="collage-photo" alt="Arya Rani standing" />
+        <img
+          src="hbdimages/ranialbumcover.jpg"
+          class="collage-photo"
+          alt="Rani album cover"
+        />
+        <img
+          src="hbdimages/raniparking.jpg"
+          class="collage-photo"
+          alt="Rani parking"
+        />
+        <img
+          src="hbdimages/aryaranisleeping.jpg"
+          class="collage-photo"
+          alt="Arya Rani sleeping"
+        />
+        <img
+          src="hbdimages/aryaranistanding.jpg"
+          class="collage-photo"
+          alt="Arya Rani standing"
+        />
         <img src="hbdimages/crown.jpg" class="collage-photo" alt="Crown" />
-        <img src="hbdimages/fishdrawing.jpg" class="collage-photo" alt="Fish drawing" />
+        <img
+          src="hbdimages/fishdrawing.jpg"
+          class="collage-photo"
+          alt="Fish drawing"
+        />
         <!-- Duplicate for seamless loop -->
-        <img src="hbdimages/ranialbumcover.jpg" class="collage-photo" alt="Rani album cover" />
-        <img src="hbdimages/raniparking.jpg" class="collage-photo" alt="Rani parking" />
-        <img src="hbdimages/aryaranisleeping.jpg" class="collage-photo" alt="Arya Rani sleeping" />
-        <img src="hbdimages/aryaranistanding.jpg" class="collage-photo" alt="Arya Rani standing" />
+        <img
+          src="hbdimages/ranialbumcover.jpg"
+          class="collage-photo"
+          alt="Rani album cover"
+        />
+        <img
+          src="hbdimages/raniparking.jpg"
+          class="collage-photo"
+          alt="Rani parking"
+        />
+        <img
+          src="hbdimages/aryaranisleeping.jpg"
+          class="collage-photo"
+          alt="Arya Rani sleeping"
+        />
+        <img
+          src="hbdimages/aryaranistanding.jpg"
+          class="collage-photo"
+          alt="Arya Rani standing"
+        />
         <img src="hbdimages/crown.jpg" class="collage-photo" alt="Crown" />
-        <img src="hbdimages/fishdrawing.jpg" class="collage-photo" alt="Fish drawing" />
+        <img
+          src="hbdimages/fishdrawing.jpg"
+          class="collage-photo"
+          alt="Fish drawing"
+        />
       </div>
 
       <!-- Row 4: Right to Left -->
       <div class="collage-row">
-        <img src="hbdimages/fishdrawing.jpg" class="collage-photo" alt="Fish drawing" />
+        <img
+          src="hbdimages/fishdrawing.jpg"
+          class="collage-photo"
+          alt="Fish drawing"
+        />
         <img src="hbdimages/crown.jpg" class="collage-photo" alt="Crown" />
-        <img src="hbdimages/raniparking.jpg" class="collage-photo" alt="Rani parking" />
-        <img src="hbdimages/ranialbumcover.jpg" class="collage-photo" alt="Rani album cover" />
-        <img src="hbdimages/aryaranistanding.jpg" class="collage-photo" alt="Arya Rani standing" />
-        <img src="hbdimages/aryaranisleeping.jpg" class="collage-photo" alt="Arya Rani sleeping" />
+        <img
+          src="hbdimages/raniparking.jpg"
+          class="collage-photo"
+          alt="Rani parking"
+        />
+        <img
+          src="hbdimages/ranialbumcover.jpg"
+          class="collage-photo"
+          alt="Rani album cover"
+        />
+        <img
+          src="hbdimages/aryaranistanding.jpg"
+          class="collage-photo"
+          alt="Arya Rani standing"
+        />
+        <img
+          src="hbdimages/aryaranisleeping.jpg"
+          class="collage-photo"
+          alt="Arya Rani sleeping"
+        />
         <!-- Duplicate for seamless loop -->
-        <img src="hbdimages/fishdrawing.jpg" class="collage-photo" alt="Fish drawing" />
+        <img
+          src="hbdimages/fishdrawing.jpg"
+          class="collage-photo"
+          alt="Fish drawing"
+        />
         <img src="hbdimages/crown.jpg" class="collage-photo" alt="Crown" />
-        <img src="hbdimages/raniparking.jpg" class="collage-photo" alt="Rani parking" />
-        <img src="hbdimages/ranialbumcover.jpg" class="collage-photo" alt="Rani album cover" />
-        <img src="hbdimages/aryaranistanding.jpg" class="collage-photo" alt="Arya Rani standing" />
-        <img src="hbdimages/aryaranisleeping.jpg" class="collage-photo" alt="Arya Rani sleeping" />
+        <img
+          src="hbdimages/raniparking.jpg"
+          class="collage-photo"
+          alt="Rani parking"
+        />
+        <img
+          src="hbdimages/ranialbumcover.jpg"
+          class="collage-photo"
+          alt="Rani album cover"
+        />
+        <img
+          src="hbdimages/aryaranistanding.jpg"
+          class="collage-photo"
+          alt="Arya Rani standing"
+        />
+        <img
+          src="hbdimages/aryaranisleeping.jpg"
+          class="collage-photo"
+          alt="Arya Rani sleeping"
+        />
       </div>
     </div>
 
