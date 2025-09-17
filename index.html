@@ -1,233 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday Rani!</title>
-    <style>
-      body {
-        background: linear-gradient(
-          120deg,
-          #ffe6f7 0%,
-          #fffbe6 100%,
-          #e0c3fc 100%
-        );
-        font-family: "Segoe UI", cursive, sans-serif;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        overflow-x: hidden;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Rani! 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: 
+        linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 25%, rgba(240, 147, 251, 0.85) 50%, rgba(245, 87, 108, 0.85) 75%, rgba(79, 172, 254, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80') center/cover no-repeat;
+      background-attachment: fixed;
+      background-size: 300% 300%, cover;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      animation: gradientFlow 15s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientFlow {
+      0%, 100% { background-position: 0% 50%; }
+      25% { background-position: 100% 0%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 0% 100%; }
+    }
+
+    /* One Direction themed floating elements */
+    .bg-elements {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .floating-shape {
+      position: absolute;
+      opacity: 0.15;
+      animation: float 20s infinite linear;
+      font-weight: bold;
+    }
+
+    .heart { 
+      font-size: 2rem; 
+      color: #ff69b4; 
+      top: 10%; 
+      left: 20%; 
+      animation-duration: 25s; 
+    }
+    .star { 
+      font-size: 1.5rem; 
+      color: #ffd700; 
+      top: 60%; 
+      right: 15%; 
+      animation-duration: 18s; 
+    }
+    .butterfly { 
+      font-size: 2.5rem; 
+      color: #9c27b0; 
+      top: 30%; 
+      right: 30%; 
+      animation-duration: 22s; 
+    }
+    .music-note {
+      font-size: 2rem;
+      color: #00bcd4;
+      top: 70%;
+      left: 15%;
+      animation-duration: 20s;
+    }
+    .one-direction {
+      font-size: 1.2rem;
+      color: #ff4081;
+      top: 20%;
+      right: 10%;
+      animation-duration: 30s;
+      font-family: 'Dancing Script', cursive;
+      opacity: 0.2;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      33% { transform: translateY(-20px) rotate(120deg); }
+      66% { transform: translateY(10px) rotate(240deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+
+    .container {
+      max-width: 500px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(25px);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 
+        0 25px 45px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      padding: 50px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      animation: containerFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes containerFloat {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-8px) scale(1.02); }
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #ff6b9d, #c44cff, #4facfe, #ff8a80);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      animation: textShimmer 3s ease-in-out infinite;
+      filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.3));
+      line-height: 1.2;
+    }
+
+    @keyframes textShimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 35px;
+      font-weight: 300;
+      line-height: 1.6;
+      animation: fadeInUp 2s ease-out;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(30px);
       }
+      to { 
+        opacity: 1; 
+        transform: translateY(0);
+      }
+    }
+
+    .cake-container {
+      margin: 40px 0;
+      position: relative;
+    }
+
+    #cake-svg {
+      width: 100%;
+      max-width: 320px;
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+      animation: cakeFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes cakeFloat {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-12px) rotate(1deg); }
+    }
+
+    .flame {
+      animation: flicker 1.5s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 10px #ffd700);
+      transition: all 0.3s ease;
+    }
+
+    .flame.blown-out {
+      animation: none;
+      transform: scale(0) translateY(-20px);
+      opacity: 0;
+      filter: blur(3px);
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+      100% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+    }
+
+    #blow-btn {
+      background: linear-gradient(135deg, #ff6b9d, #ff8a80, #ffc947);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 18px 40px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 
+        0 15px 35px rgba(255, 107, 157, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      margin: 30px 0;
+    }
+
+    #blow-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    #blow-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 
+        0 20px 40px rgba(255, 107, 157, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    #blow-btn:hover::before {
+      left: 100%;
+    }
+
+    #blow-btn:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    .decorations {
+      margin-top: 35px;
+      font-size: 2rem;
+      animation: decorFloat 4s ease-in-out infinite;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    }
+
+    @keyframes decorFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-8px) scale(1.05); }
+    }
+
+    .decorations span {
+      display: inline-block;
+      margin: 0 8px;
+      animation: bounceDelay 2s infinite;
+    }
+
+    .decorations span:nth-child(odd) {
+      animation-delay: -0.32s;
+    }
+
+    .decorations span:nth-child(even) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes bounceDelay {
+      0%, 80%, 100% { transform: scale(1); }
+      40% { transform: scale(1.2); }
+    }
+
+    .confetti {
+      position: fixed;
+      z-index: 1000;
+      pointer-events: none;
+      border-radius: 50%;
+      animation: confettiFall 3s linear forwards;
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes smokeRise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-30px) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Sparkle effects */
+    .sparkle {
+      position: absolute;
+      color: #ffd700;
+      font-size: 1rem;
+      pointer-events: none;
+      animation: sparkleAnim 2s linear forwards;
+    }
+
+    @keyframes sparkleAnim {
+      0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1) rotate(180deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
       .container {
-        max-width: 520px;
-        margin: 40px auto;
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 32px;
-        box-shadow: 0 8px 32px rgba(231, 84, 128, 0.12), 0 0 0 8px #ffe6f7;
-        padding: 36px 28px 28px 28px;
-        text-align: center;
-        position: relative;
-        border: 2px solid #ffd1dc;
+        padding: 40px 30px;
       }
-      .birthday-title {
+      
+      .title {
         font-size: 2.8rem;
-        color: #e75480;
-        margin-bottom: 10px;
-        font-weight: bold;
-        text-shadow: 2px 2px 12px #ffd1dc, 0 0 18px #fff0f6;
-        letter-spacing: 2px;
       }
+      
       .subtitle {
-        font-size: 1.2rem;
-        color: #b06ab3;
-        margin-bottom: 18px;
-        font-family: "Segoe Script", cursive;
-        text-shadow: 0 0 8px #ffe6f7;
+        font-size: 1rem;
       }
-      .cake-container {
-        margin: 24px 0 16px 0;
-      }
-      #cake-svg {
-        display: block;
-        margin: 0 auto;
-        filter: drop-shadow(0 4px 16px #ffd1dc);
-      }
+      
       #blow-btn {
-        background: linear-gradient(90deg, #ffb6c1, #b6e1ff, #ffe4b5);
-        color: #e75480;
-        border: none;
-        border-radius: 24px;
-        padding: 14px 36px;
-        font-size: 1.3rem;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 2px 12px rgba(231, 84, 128, 0.15);
-        margin-top: 18px;
-        transition: background 0.3s, color 0.3s;
-        outline: 2px solid #ffd1dc;
+        padding: 16px 32px;
+        font-size: 1.2rem;
       }
-      #blow-btn:hover {
-        background: linear-gradient(90deg, #ffe4b5, #b6e1ff, #ffb6c1);
-        color: #b06ab3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-elements">
+    <div class="floating-shape heart">💖</div>
+    <div class="floating-shape star">⭐</div>
+    <div class="floating-shape butterfly">🦋</div>
+    <div class="floating-shape music-note">🎵</div>
+    <div class="floating-shape one-direction">1D</div>
+  </div>
+
+  <div class="container">
+    <h1 class="title">Happy Birthday Rani! 🎉</h1>
+    <p class="subtitle">I know you are a know-it-all, but I love you being my sister who asks me what 'emphasize' means 😂</p>
+    
+    <div class="cake-container">
+      <svg id="cake-svg" viewBox="0 0 300 250">
+        <!-- Cake shadow -->
+        <ellipse cx="155" cy="205" rx="95" ry="25" fill="rgba(0,0,0,0.1)" />
+        
+        <!-- Cake base -->
+        <ellipse cx="150" cy="200" rx="90" ry="28" fill="#f8bbd9" />
+        <rect x="60" y="105" width="180" height="95" rx="35" fill="#f48fb1" />
+        <ellipse cx="150" cy="120" rx="90" ry="28" fill="#fce4ec" />
+        
+        <!-- Cake decorations -->
+        <path d="M 80 150 Q 90 140 100 150 Q 110 140 120 150 Q 130 140 140 150 Q 150 140 160 150 Q 170 140 180 150 Q 190 140 200 150 Q 210 140 220 150" 
+              stroke="#ff69b4" stroke-width="3" fill="none" />
+        
+        <!-- Candles -->
+        <g id="candles">
+          <rect x="95" y="85" width="8" height="25" fill="#ff8a80" rx="4" />
+          <rect x="145" y="85" width="8" height="25" fill="#81d4fa" rx="4" />
+          <rect x="195" y="85" width="8" height="25" fill="#ffe082" rx="4" />
+          
+          <circle class="flame" cx="99" cy="78" r="7" fill="url(#flameGradient)" />
+          <circle class="flame" cx="149" cy="78" r="7" fill="url(#flameGradient)" />
+          <circle class="flame" cx="199" cy="78" r="7" fill="url(#flameGradient)" />
+        </g>
+        
+        <!-- Cake decorative elements -->
+        <circle cx="120" cy="165" r="6" fill="#ff69b4" />
+        <circle cx="180" cy="165" r="6" fill="#81d4fa" />
+        <circle cx="150" cy="175" r="6" fill="#ffe082" />
+        
+        <!-- Gradient definitions -->
+        <defs>
+          <radialGradient id="flameGradient">
+            <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+            <stop offset="30%" style="stop-color:#ffd700;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ff4500;stop-opacity:1" />
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    
+    <button id="blow-btn">✨ Make a Wish ✨</button>
+    
+    <div class="decorations">
+      <span>🎈</span>
+      <span>🎂</span>
+      <span>💖</span>
+      <span>🎁</span>
+      <span>🌟</span>
+      <span>✨</span>
+      <span>🦋</span>
+      <span>🌸</span>
+    </div>
+  </div>
+
+  <script>
+    let candlesBlown = false;
+
+    document.getElementById("blow-btn").addEventListener("click", () => {
+      if (candlesBlown) return;
+      
+      candlesBlown = true;
+      const flames = document.querySelectorAll(".flame");
+      const btn = document.getElementById("blow-btn");
+      
+      // Change button text and style
+      btn.textContent = "🎉 Wishes Coming True! 🎉";
+      btn.style.background = "linear-gradient(135deg, #4facfe, #00f2fe)";
+      
+      // Blow out candles with stagger effect and class-based animation
+      flames.forEach((flame, index) => {
+        setTimeout(() => {
+          flame.classList.add('blown-out');
+          
+          // Create sparkles when candle goes out
+          createSparkles(flame.cx.baseVal.value, flame.cy.baseVal.value);
+          
+          // Add smoke effect
+          createSmoke(flame.cx.baseVal.value, flame.cy.baseVal.value);
+        }, index * 300);
+      });
+
+      // Show confetti after all candles are out
+      setTimeout(() => {
+        showEnhancedConfetti();
+        
+        setTimeout(() => {
+          showCustomAlert();
+        }, 1000);
+      }, 1000);
+    });
+
+    function createSmoke(x, y) {
+      const smoke = document.createElement('div');
+      smoke.style.cssText = `
+        position: absolute;
+        left: ${x - 5}px;
+        top: ${y - 10}px;
+        width: 10px;
+        height: 15px;
+        background: rgba(100, 100, 100, 0.3);
+        border-radius: 50%;
+        pointer-events: none;
+        animation: smokeRise 2s ease-out forwards;
+      `;
+      
+      document.querySelector('.cake-container').appendChild(smoke);
+      setTimeout(() => smoke.remove(), 2000);
+    }
+
+    function createSparkles(x, y) {
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          const sparkle = document.createElement('div');
+          sparkle.className = 'sparkle';
+          sparkle.textContent = '✨';
+          sparkle.style.left = (x + Math.random() * 50 - 25) + 'px';
+          sparkle.style.top = (y + Math.random() * 50 - 25) + 'px';
+          document.querySelector('.cake-container').appendChild(sparkle);
+          
+          setTimeout(() => sparkle.remove(), 2000);
+        }, i * 100);
       }
-      .decorations {
-        margin-top: 28px;
-        font-size: 2.2rem;
-        letter-spacing: 12px;
-        animation: floatDecor 3s infinite alternate;
+    }
+
+    function showEnhancedConfetti() {
+      const colors = ['#ff6b9d', '#4facfe', '#ffe082', '#81c784', '#c44cff', '#ff8a80', '#f093fb'];
+      const shapes = ['circle', 'heart', 'star'];
+      
+      for (let i = 0; i < 80; i++) {
+        setTimeout(() => {
+          const conf = document.createElement('div');
+          conf.className = 'confetti';
+          
+          const size = 4 + Math.random() * 8;
+          conf.style.width = size + 'px';
+          conf.style.height = size + 'px';
+          conf.style.left = Math.random() * window.innerWidth + 'px';
+          conf.style.top = '-20px';
+          conf.style.background = colors[Math.floor(Math.random() * colors.length)];
+          
+          // Random shape
+          if (Math.random() > 0.7) {
+            conf.style.borderRadius = '0';
+            conf.style.transform = 'rotate(45deg)';
+          }
+          
+          document.body.appendChild(conf);
+          
+          setTimeout(() => conf.remove(), 3000);
+        }, i * 30);
       }
-      @keyframes floatDecor {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-10px);
-        }
-      }
-      .floral-top,
-      .floral-bottom {
+    }
+
+    function showCustomAlert() {
+      // Create custom modal instead of alert
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
         display: flex;
         justify-content: center;
-        gap: 12px;
-        font-size: 2.2rem;
-        margin-bottom: 8px;
-        margin-top: 8px;
-      }
-      .floral-bottom {
-        margin-top: 18px;
-        margin-bottom: 0;
-      }
-      .flower,
-      .sparkle,
-      .heart {
-        animation: sparkle 2.5s infinite alternate;
-      }
-      @keyframes sparkle {
-        0% {
-          filter: brightness(1);
-        }
-        100% {
-          filter: brightness(1.5) drop-shadow(0 0 8px #ffd1dc);
-        }
-      }
-      /* Cake decorations */
-      #cake-svg circle {
-        filter: drop-shadow(0 0 6px #fff0f6);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="floral-top">
-        <span class="flower">🌸</span>
-        <span class="flower">🌷</span>
-        <span class="flower">🌺</span>
-        <span class="sparkle">✨</span>
-        <span class="heart">💖</span>
-      </div>
-      <h1 class="birthday-title">🎉 Happy Birthday Rani! 💖</h1>
-      <p class="subtitle">
-        i know you are know it all but i like you being my sister who asks me
-        what emphsize means
-      </p>
-      <div class="cake-container">
-        <svg id="cake-svg" width="300" height="250" viewBox="0 0 300 250">
-          <!-- Cake base -->
-          <ellipse cx="150" cy="200" rx="100" ry="30" fill="#f7c59f" />
-          <rect
-            x="50"
-            y="100"
-            width="200"
-            height="100"
-            rx="40"
-            fill="#f7c59f"
-          />
-          <!-- Cake icing -->
-          <ellipse cx="150" cy="120" rx="100" ry="30" fill="#fff0f6" />
-          <!-- Candles -->
-          <g id="candles">
-            <rect x="90" y="80" width="10" height="30" fill="#ffb6c1" />
-            <rect x="140" y="80" width="10" height="30" fill="#b6e1ff" />
-            <rect x="190" y="80" width="10" height="30" fill="#ffe4b5" />
-            <!-- Flames -->
-            <circle class="flame" cx="95" cy="75" r="6" fill="#ffd700" />
-            <circle class="flame" cx="145" cy="75" r="6" fill="#ffd700" />
-            <circle class="flame" cx="195" cy="75" r="6" fill="#ffd700" />
-          </g>
-          <!-- Cake decorations -->
-          <circle cx="110" cy="170" r="8" fill="#ffb6c1" />
-          <circle cx="190" cy="170" r="8" fill="#b6e1ff" />
-          <circle cx="150" cy="180" r="8" fill="#ffe4b5" />
-        </svg>
-      </div>
-      <button id="blow-btn">💨 Blow Your Cake!</button>
-      <div class="decorations">
-        <span>🎈</span><span>🎂</span><span>💖</span><span>🎁</span
-        ><span>🌟</span><span>✨</span><span>🦋</span><span>🌸</span>
-      </div>
-      <div class="floral-bottom">
-        <span class="flower">🌸</span>
-        <span class="flower">🌷</span>
-        <span class="flower">🌺</span>
-        <span class="sparkle">✨</span>
-        <span class="heart">💖</span>
-      </div>
-    </div>
-    <script>
-      document
-        .getElementById("blow-btn")
-        .addEventListener("click", function () {
-          // Animate flames to disappear
-          const flames = document.querySelectorAll(".flame");
-          flames.forEach((flame, i) => {
-            flame.style.transition =
-              "opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55)";
-            flame.style.opacity = "0";
-          });
-          // Add confetti effect
-          setTimeout(() => {
-            showConfetti();
-            setTimeout(() => {
-              alert("Make a wish, Rani! 🎂✨");
-            }, 1200);
-          }, 900);
-        });
+        align-items: center;
+        z-index: 10000;
+        animation: fadeIn 0.5s ease;
+      `;
+      
+      const content = document.createElement('div');
+      content.style.cssText = `
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        max-width: 400px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      `;
+      
+      content.innerHTML = `
+        <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 20px;">🎂✨</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 20px;">May all your wishes come true, Rani!</p>
+        <p style="font-size: 1rem; opacity: 0.9;">Hope your special day is filled with love, laughter, and lots of cake! 💖</p>
+        <button onclick="this.parentElement.parentElement.remove()" 
+                style="margin-top: 30px; padding: 12px 30px; background: rgba(255,255,255,0.2); 
+                       border: 1px solid rgba(255,255,255,0.3); border-radius: 25px; 
+                       color: white; cursor: pointer; backdrop-filter: blur(10px);">
+          Close 💕
+        </button>
+      `;
+      
+      modal.appendChild(content);
+      document.body.appendChild(modal);
+      
+      // Add CSS for animations
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes scaleIn { from { transform: scale(0.8); } to { transform: scale(1); } }
+      `;
+      document.head.appendChild(style);
+    }
 
-      function showConfetti() {
-        const confettiColors = [
-          "#ffb6c1",
-          "#b6e1ff",
-          "#ffe4b5",
-          "#e75480",
-          "#b06ab3",
-          "#ffd1dc",
-        ];
-        for (let i = 0; i < 40; i++) {
-          const conf = document.createElement("div");
-          conf.className = "confetti";
-          conf.style.background =
-            confettiColors[Math.floor(Math.random() * confettiColors.length)];
-          conf.style.left = Math.random() * 100 + "vw";
-          conf.style.top = "-20px";
-          conf.style.width = 8 + Math.random() * 8 + "px";
-          conf.style.height = conf.style.width;
-          conf.style.position = "fixed";
-          conf.style.borderRadius = "50%";
-          conf.style.zIndex = "999";
-          conf.style.opacity = 0.8;
-          conf.style.pointerEvents = "none";
-          conf.style.transition =
-            "top 1.2s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.8s";
-          document.body.appendChild(conf);
-          setTimeout(() => {
-            conf.style.top = 60 + Math.random() * 30 + "vh";
-            conf.style.opacity = 0;
-          }, 50);
-          setTimeout(() => {
-            conf.remove();
-          }, 1400);
-        }
+    // Add some ambient sparkles
+    setInterval(() => {
+      if (Math.random() > 0.7) {
+        const sparkle = document.createElement('div');
+        sparkle.textContent = '✨';
+        sparkle.style.cssText = `
+          position: fixed;
+          color: #ffd700;
+          font-size: 0.8rem;
+          pointer-events: none;
+          left: ${Math.random() * window.innerWidth}px;
+          top: ${Math.random() * window.innerHeight}px;
+          animation: sparkleAnim 3s linear forwards;
+          z-index: 5;
+        `;
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 3000);
       }
-    </script>
-  </body>
+    }, 2000);
+  </script>
+</body>
+
 </html>
